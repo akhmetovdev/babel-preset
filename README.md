@@ -8,24 +8,131 @@
 
 Included presets:
 
-* @babel/preset-env
+- @babel/preset-env
 
 Included plugins:
 
-* @babel/plugin-proposal-class-properties
-* @babel/plugin-proposal-decorators
-* @babel/plugin-proposal-do-expressions
-* @babel/plugin-proposal-export-default-from
-* @babel/plugin-proposal-export-namespace-from
-* @babel/plugin-proposal-function-bind
-* @babel/plugin-proposal-function-sent
-* @babel/plugin-proposal-logical-assignment-operators
-* @babel/plugin-proposal-nullish-coalescing-operator
-* @babel/plugin-proposal-numeric-separator
-* @babel/plugin-proposal-optional-chaining
-* @babel/plugin-proposal-pipeline-operator
-* @babel/plugin-proposal-throw-expressions
-* @babel/plugin-transform-runtime
+- @babel/plugin-proposal-async-generator-functions
+
+```javascript
+async function* example() {
+  await 'example';
+  yield 'example';
+}
+```
+
+- @babel/plugin-proposal-class-properties
+
+```javascript
+class Example {
+  example = 'example';
+}
+```
+
+- @babel/plugin-proposal-decorators
+
+```javascript
+@example
+class Example {}
+```
+
+- @babel/plugin-proposal-do-expressions
+
+```javascript
+const example = do {
+  if (true) 'example';
+};
+```
+
+- @babel/plugin-proposal-export-default-from
+
+```javascript
+export example from './example';
+```
+
+- @babel/plugin-proposal-export-namespace-from
+
+```javascript
+export * as example from './example';
+```
+
+- @babel/plugin-proposal-function-bind
+
+```javascript
+::example
+```
+
+- @babel/plugin-proposal-function-sent
+
+```javascript
+function* example() {
+  console.log(function.sent);
+}
+```
+
+- @babel/plugin-proposal-logical-assignment-operators
+
+```javascript
+a &&= b;
+a ||= b;
+a ??= b;
+```
+
+- @babel/plugin-proposal-nullish-coalescing-operator
+
+```javascript
+a = b ?? 'example';
+```
+
+- @babel/plugin-proposal-numeric-separator
+
+```javascript
+example = 1_000_000;
+```
+
+- @babel/plugin-proposal-object-rest-spread
+
+```javascript
+a = { b, c, ...d };
+```
+
+- @babel/plugin-proposal-optional-catch-binding
+
+```javascript
+try {
+  a();
+} catch {
+  b();
+} finally {
+  c();
+}
+```
+
+- @babel/plugin-proposal-optional-chaining
+
+```javascript
+a?.b?.c;
+```
+
+- @babel/plugin-proposal-pipeline-operator
+
+```javascript
+'example' |> a |> b |> c;
+```
+
+- @babel/plugin-proposal-throw-expressions
+
+```javascript
+function example(a = throw new Error('REQUIRED')) {}
+```
+
+- @babel/plugin-proposal-unicode-property-regex
+
+```javascript
+/\u{0}/u;
+```
+
+- @babel/plugin-transform-runtime
 
 ## Setup
 
@@ -45,9 +152,7 @@ In your .babelrc:
 
 ```json
 {
-  "presets": [
-    "@akhmetovdev/babel-preset"
-  ]
+  "presets": ["@akhmetovdev/babel-preset"]
 }
 ```
 
